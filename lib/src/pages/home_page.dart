@@ -34,13 +34,15 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          print('HolA!!!!');
-        },
-        child: Icon(Icons.add),
-      ),
+      floatingActionButton: _crearBotones(),
       // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+    );
+  }
+
+  Widget _crearBotones() {
+    return FloatingActionButton(
+      onPressed: null,
+      child: Icon(Icons.add),
     );
   }
 }
