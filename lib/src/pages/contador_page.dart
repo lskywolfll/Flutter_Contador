@@ -63,7 +63,7 @@ class _ContadorPageState extends State<ContadorPage> {
         FloatingActionButton(
           onPressed: () {
             setState(() {
-              _conteo++;
+              _conteo += 2;
             });
           },
           child: Icon(Icons.exposure_plus_2),
