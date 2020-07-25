@@ -45,6 +45,30 @@ class _ContadorPageState extends State<ContadorPage> {
     );
   }
 
+  void _agregar() {
+    setState(() {
+      _conteo += 1;
+    });
+  }
+
+  void _agregarDoble() {
+    setState(() {
+      _conteo += 2;
+    });
+  }
+
+  void _reiniciar() {
+    setState(() {
+      _conteo = 0;
+    });
+  }
+
+  void _restar() {
+    setState(() {
+      _conteo -= 1;
+    });
+  }
+
   Widget _crearBotones() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
@@ -52,41 +76,25 @@ class _ContadorPageState extends State<ContadorPage> {
       children: <Widget>[
         SizedBox(width: 30),
         FloatingActionButton(
-          onPressed: () {
-            setState(() {
-              _conteo = 0;
-            });
-          },
+          onPressed: _reiniciar,
           child: Icon(Icons.exposure_zero),
           tooltip: 'Reinicia el conteo',
         ),
         Expanded(child: SizedBox()),
         FloatingActionButton(
-          onPressed: () {
-            setState(() {
-              _conteo += 2;
-            });
-          },
+          onPressed: _agregarDoble,
           child: Icon(Icons.exposure_plus_2),
           tooltip: 'Incrementa en dos',
         ),
         SizedBox(width: 5.0),
         FloatingActionButton(
-          onPressed: () {
-            setState(() {
-              _conteo -= 1;
-            });
-          },
+          onPressed: _restar,
           child: Icon(Icons.remove),
           tooltip: 'Resta uno',
         ),
         SizedBox(width: 5.0),
         FloatingActionButton(
-          onPressed: () {
-            setState(() {
-              _conteo++;
-            });
-          },
+          onPressed: _agregar,
           child: Icon(Icons.add),
           tooltip: 'Incrementa en uno',
         )
