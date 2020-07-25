@@ -16,7 +16,7 @@ class _ContadorPageState extends State<ContadorPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Statefull'),
+        title: Text('Titulos'),
         centerTitle: true,
         // Agrega como una oscuridad
         elevation: 4,
@@ -47,9 +47,10 @@ class _ContadorPageState extends State<ContadorPage> {
 
   Widget _crearBotones() {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.end,
+      mainAxisSize: MainAxisSize.max,
       children: <Widget>[
+        SizedBox(width: 30),
         FloatingActionButton(
           onPressed: () {
             setState(() {
@@ -59,7 +60,7 @@ class _ContadorPageState extends State<ContadorPage> {
           child: Icon(Icons.exposure_zero),
           tooltip: 'Reinicia el conteo',
         ),
-        SizedBox(width: 10.0),
+        Expanded(child: SizedBox()),
         FloatingActionButton(
           onPressed: () {
             setState(() {
@@ -69,7 +70,17 @@ class _ContadorPageState extends State<ContadorPage> {
           child: Icon(Icons.exposure_plus_2),
           tooltip: 'Incrementa en dos',
         ),
-        SizedBox(width: 10.0),
+        SizedBox(width: 5.0),
+        FloatingActionButton(
+          onPressed: () {
+            setState(() {
+              _conteo -= 1;
+            });
+          },
+          child: Icon(Icons.remove),
+          tooltip: 'Resta uno',
+        ),
+        SizedBox(width: 5.0),
         FloatingActionButton(
           onPressed: () {
             setState(() {
